@@ -102,3 +102,6 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 Copyright © 2024 [ultrasev](https://github.com/ultrasev).<br />
 This project is [MIT](LICENSE) licensed.
+
+# Support me
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/stopia)
