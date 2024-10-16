@@ -1,5 +1,10 @@
+<!-- todo:
+1. change icon
+2. one-click deploy
+3. support cerebras
+-->
 <p align="center">
- <img width="100px" src="public/vercel.png" align="center" alt="Deploy Python(+FastAPI) project on Vercel" />
+ <img width="100px" src="public/vercel.png" align="center" alt="Deploy on Vercel" />
  <h2 align="center"> LLM API 反向代理 </h2>
 
 <p align="center">
@@ -12,30 +17,62 @@
   <br />
 </p>
 
-众所周知，Google, Groq, Cerebras（使用了 Amazon cloudfront） 等供应商在部分国家及地区（e.g, 中国香港）不提供服务。
+本项目旨在提供一个反向代理服务，解决在部分国家或地区无法直接访问 Google, Groq, Cerebras（Amazon cloudfront）等平台 API 的问题。
 
-本项目旨在提供一个反向代理服务，解决在部分国家或地区无法直接访问的问题。
+# 功能
 
-# 支持功能
+通过 Vercel 边缘网络，反向代理 OpenAI、Groq、Google、Cerebras 等平台的 API 请求。
 
-- 支持供应商：Groq、Google、OpenAI
+- 支持供应商：Groq、Google、OpenAI、Cerebras
 - 支持流式输出
 - 兼容 OpenAI API 规范
 
 注：大陆不可直接访问 vercel.app 域名。如想直接访问，可参考之前作者的另一个项目[llmproxy](https://github.com/ultrasev/llmproxy)，通过 cloudflare worker 部署 LLM API 反向代理。
 
-# 示例
+
+# 使用
+
+## 示例 1： OpenAI
 
 ```python
-from openai import AsyncOpenAI
+from openai import OpenAI
 
+client = OpenAI(
+    api_key="sk-proj-...",
+    base_url="https://llmproxy-vercel.vercel.app/openai", # 没有 /v1 后缀
+)
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Hello world!"}],
+)
+
+print(response.choices[0].message.content)
+```
+
+## 示例 2： Google Gemini
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="...",
+    base_url="https://llmproxy-vercel.vercel.app/gemini",
+)
+
+response = client.chat.completions.create(
+    model="gemini-1.5-flash",
+    messages=[{"role": "user", "content": "Hello world!"}],
+)
+
+print(response.choices[0].message.content)
 ```
 
 # Vercel 一键部署
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ultrasev/llmproxy-vercel/tree/master/llmproxy&demo-title=PythonDeployment&demo-description=Deploy&demo-url=https://llmproxy.vercel.app/&demo-image=https://vercel.com/button)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fultrasev%2Fllmproxy-vercel)
 
-# Local Development
+# 本地开发测试
 
 ```bash
 pip3 install -r requirements.txt
