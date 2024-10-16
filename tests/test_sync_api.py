@@ -67,3 +67,11 @@ async def test_gemini():
         api_key=os.environ["GEMINI_API_KEY"],
         model="gemini-1.5-flash"
     )
+
+@pytest.mark.asyncio
+async def test_cerebras():
+    await make_request(
+        supplier="cerebras",
+        api_key=os.environ["CEREBRAS_API_KEY"],
+        model="llama3.1-8b"
+    )
