@@ -5,15 +5,16 @@ from dotenv import load_dotenv
 from openai import AsyncOpenAI
 import random
 from loguru import logger
+from config import PRODUCTION_API_ENDPOINT, DEVELOPMENT_API_ENDPOINT
 load_dotenv()
 
 
 def api_endpoint():
     env = os.environ.get('ENV', 'development')
     if env == 'production':
-        return "https://vercel-python-fastapi-chi.vercel.app/"
+        return PRODUCTION_API_ENDPOINT
     elif env == 'development':
-        return "http://192.168.31.46:3000"
+        return DEVELOPMENT_API_ENDPOINT
     else:
         raise ValueError(f"Invalid environment: {env}")
 
