@@ -31,6 +31,7 @@
 
 
 # 使用
+测试 API 地址：https://llmproxy-vercel.vercel.app/ ，部署到 Vercel 后，可使用自己的 API 地址为：https://<your-project-name>.vercel.app/
 
 ## 示例 1： OpenAI
 
@@ -66,6 +67,23 @@ response = client.chat.completions.create(
 )
 
 print(response.choices[0].message.content)
+```
+
+## 示例 3： Cerebras
+
+```bash
+curl --location 'https://llmproxy-vercel.vercel.app/cerebras/chat/completions' \
+  --header 'Content-Type: application/json' \
+  --header "Authorization: Bearer ${CEREBRAS_API_KEY}" \
+  --data '{
+    "model": "llama3.1-8b",
+    "stream": false,
+    "messages": [{"content": "why is fast inference important?", "role": "user"}],
+    "temperature": 0,
+    "max_tokens": -1,
+    "seed": 0,
+    "top_p": 1
+}'
 ```
 
 # Vercel 一键部署
