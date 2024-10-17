@@ -26,7 +26,7 @@ logger.info(f"BASE_URL: {BASE_URL}")
 async def make_request(api_key: str,
                        model: str,
                        supplier: str,
-                       query: str = "what is the result of 2*21"):
+                       query: str = "The first president of the United States, give me his full name and only his full name"):
     client = AsyncOpenAI(base_url=BASE_URL + f"/{supplier}", api_key=api_key)
     response = await client.chat.completions.create(
         model=model,
@@ -39,7 +39,9 @@ async def make_request(api_key: str,
         max_tokens=20
     )
     print(type(response), response)
-    return response.choices[0].message.content
+    content = response.choices[0].message.content
+    assert "George Washington" in content, f"Expected 'George Washington' in content, but got {content}"
+    return content
 
 
 @pytest.mark.asyncio
