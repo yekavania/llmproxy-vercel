@@ -68,6 +68,7 @@ async def test_gemini():
         model="gemini-1.5-flash"
     )
 
+
 @pytest.mark.asyncio
 async def test_cerebras():
     await make_request(
@@ -83,4 +84,22 @@ async def test_nvidia():
         supplier="nvidia",
         api_key=os.environ["NVIDIA_API_KEY"],
         model="nvidia/llama-3.1-nemotron-70b-instruct"
+    )
+
+
+@pytest.mark.asyncio
+async def test_mistral():
+    await make_request(
+        supplier="mistral",
+        api_key=os.environ["MISTRAL_API_KEY"],
+        model="mistral-large-latest",
+    )
+
+
+@pytest.mark.asyncio
+async def test_sambanova():
+    await make_request(
+        supplier="sambanova",
+        api_key=os.environ["SAMBANOVA_API_KEY"],
+        model="Meta-Llama-3.1-405B-Instruct",
     )
