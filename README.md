@@ -29,8 +29,8 @@
 
 注：大陆不可直接访问 vercel.app 域名。如想直接访问，可参考之前作者的另一个项目[llmproxy](https://github.com/ultrasev/llmproxy)，通过 cloudflare worker 部署 LLM API 反向代理。
 
-
 # 使用
+
 测试 API 地址：https://llmproxy-vercel.vercel.app/ ，部署到 Vercel 后，可使用自己的 API 地址为：https://<your-project-name>.vercel.app/
 
 ## 示例 1： OpenAI
@@ -104,4 +104,11 @@ Copyright © 2024 [ultrasev](https://github.com/ultrasev).<br />
 This project is [MIT](LICENSE) licensed.
 
 # Support me
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/stopia)
+
+## Contacts
+
+- [![Twitter Follow](https://img.shields.io/twitter/follow/ultrasev?style=social)](https://twitter.com/slippertopia)
+- [![GitHub Follow](https://img.shields.io/github/followers/ultrasev?style=social)](https://github.com/ultrasev)
+- [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCt0Op8mQvqwjp18B8vNPjzg?style=social)](https://www.youtube.com/channel/UCt0Op8mQvqwjp18B8vNPjzg)
