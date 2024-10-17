@@ -23,7 +23,7 @@
 
 通过 Vercel 边缘网络，反向代理 OpenAI、Groq、Google、Cerebras 等平台的 API 请求。
 
-- 支持供应商：Groq、Google、OpenAI、Cerebras
+- 支持供应商：Groq、Google、OpenAI、Cerebras、NVIDIA、Mistral、Sambanova
 - 支持流式输出
 - 兼容 OpenAI API 规范
 
@@ -95,7 +95,7 @@ curl --location 'https://llmproxy-vercel.vercel.app/cerebras/chat/completions' \
 ```bash
 pip3 install -r requirements.txt
 pip3 install uvicorn
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 3000 --reload
 ```
 
 # License
