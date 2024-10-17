@@ -90,3 +90,12 @@ async def test_cerebras_streaming():
         api_key=os.environ["CEREBRAS_API_KEY"],
         model="llama3.1-8b"
     )
+
+
+@pytest.mark.asyncio
+async def test_nvidia_streaming():
+    await make_request(
+        supplier="nvidia",
+        api_key=os.environ["NVIDIA_API_KEY"],
+        model="nvidia/llama-3.1-nemotron-70b-instruct"
+    )
