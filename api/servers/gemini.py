@@ -166,7 +166,6 @@ async def proxy_chat_completions(
                     "x-goog-api-key": api_key
                 }
             )
-            logger.info(response.status_code)
 
             if response.status_code != 200:
                 return JSONResponse(content=response.json(), status_code=response.status_code)

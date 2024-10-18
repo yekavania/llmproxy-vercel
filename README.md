@@ -31,7 +31,7 @@
 
 # 使用
 
-测试 API 地址：https://llmproxy-vercel.vercel.app/ ，部署到 Vercel 后，可使用自己的 API 地址为：https://<your-project-name>.vercel.app/
+测试 API 地址：https://llmproxy-vercel.vercel.app/ ，部署到 Vercel 后，可使用自己的 API 地址为：https://your-project-name.vercel.app/
 
 ## 示例 1： OpenAI
 
