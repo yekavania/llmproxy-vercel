@@ -3,6 +3,7 @@
 2. one-click deploy
 3. support cerebras
 -->
+
 <p align="center">
  <img width="100px" src="public/vercel.png" align="center" alt="Deploy on Vercel" />
  <h2 align="center"> LLM API 反向代理 </h2>
@@ -105,7 +106,7 @@ This project is [MIT](LICENSE) licensed.
 
 # Support me
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/stopia)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ultrasev)
 
 ## Contacts
 
