@@ -5,7 +5,7 @@
 -->
 
 <p align="center">
- <img width="100px" src="public/vercel.png" align="center" alt="Deploy on Vercel" />
+ <img width="780px" src="public/flow.png" align="center" alt="Deploy on Vercel" />
  <h2 align="center"> LLM API 反向代理 </h2>
 
 <p align="center">
@@ -81,7 +81,7 @@ curl --location 'https://llmproxy-vercel.vercel.app/cerebras/chat/completions' \
     "stream": false,
     "messages": [{"content": "why is fast inference important?", "role": "user"}],
     "temperature": 0,
-    "max_tokens": -1,
+    "max_tokens": 1024,
     "seed": 0,
     "top_p": 1
 }'
