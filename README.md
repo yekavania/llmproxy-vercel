@@ -81,7 +81,7 @@ curl --location 'https://llmproxy-vercel.vercel.app/cerebras/chat/completions' \
     "stream": false,
     "messages": [{"content": "why is fast inference important?", "role": "user"}],
     "temperature": 0,
-    "max_tokens": -1,
+    "max_tokens": 1024,
     "seed": 0,
     "top_p": 1
 }'
