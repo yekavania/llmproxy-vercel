@@ -5,7 +5,7 @@
 -->
 
 <p align="center">
- <img width="100px" src="public/vercel.png" align="center" alt="Deploy on Vercel" />
+ <img width="780px" src="public/flow.png" align="center" alt="Deploy on Vercel" />
  <h2 align="center"> LLM API 反向代理 </h2>
 
 <p align="center">
