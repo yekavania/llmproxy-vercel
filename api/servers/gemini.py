@@ -91,8 +91,7 @@ async def stream_gemini_response(model: str, payload: dict, api_key: str):
                 match = text_pattern.search(line)
                 if match:
                     text_content = match.group(1)
-                    # Unescape any escaped characters
-                    text_content = text_content.encode().decode('unicode_escape')
+                    text_content = json.loads(f'"{text_content}"')
 
                     openai_format = {
                         "id": f"chatcmpl-{int(time.time())}",
@@ -108,9 +107,8 @@ async def stream_gemini_response(model: str, payload: dict, api_key: str):
                         }]
                     }
 
-                    yield f"data: {json.dumps(openai_format)}\n\n"
+                    yield f"data: {json.dumps(openai_format, ensure_ascii=False)}\n\n"
 
-    # Send a final chunk to indicate completion
     final_chunk = {
         "id": f"chatcmpl-{int(time.time())}",
         "object": "chat.completion.chunk",
@@ -122,7 +120,7 @@ async def stream_gemini_response(model: str, payload: dict, api_key: str):
             "finish_reason": "stop"
         }]
     }
-    yield f"data: {json.dumps(final_chunk)}\n\n"
+    yield f"data: {json.dumps(final_chunk, ensure_ascii=False)}\n\n"
     yield "data: [DONE]\n\n"
 
 
