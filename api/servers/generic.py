@@ -35,7 +35,8 @@ async def proxy_chat_completions(platform: str, args: OpenAIProxyArgs, authoriza
         return StreamingResponse(
             stream_openai_response(api_url, payload, headers),
             media_type="text/event-stream",
-            headers={"X-Content-Type-Options": "nosniff"}
+            headers={"X-Content-Type-Options": "nosniff",
+                     "X-Experimental-Stream-Data": "true"}
         )
     else:
         async with httpx.AsyncClient() as client:
