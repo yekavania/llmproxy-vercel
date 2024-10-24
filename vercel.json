@@ -1,7 +1,13 @@
 {
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    }
+  ],
   "functions": {
     "main.py": {
-      "runtime": "python3.12",
+      "runtime": "python3.9",
       "memory": 1024,
       "maxDuration": 60
     }
