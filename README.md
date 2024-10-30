@@ -31,8 +31,12 @@
 注：大陆不可直接访问 vercel.app 域名。如想直接访问，可参考之前作者的另一个项目[llmproxy](https://github.com/ultrasev/llmproxy)，通过 cloudflare worker 部署 LLM API 反向代理。
 
 # 使用
+部署到 Vercel 后，可使用自己的 API 地址为：https://your-project-name.vercel.app/。
+测试 API 地址：
+- https://llmproxy-vercel.vercel.app/ : 即 vercel 提供的 API 地址，局域网内不能直接访问，需科学上网。
+- https://llm.cufo.cc/ : 作者通过 cloudflare + 美区 VPS 搭建的反向代理，大陆等地区可直接访问，调用路径为 local -> CF(HK) -> VPS(US) -> OpenAI。
 
-测试 API 地址：https://llmproxy-vercel.vercel.app/ ，部署到 Vercel 后，可使用自己的 API 地址为：https://your-project-name.vercel.app/
+两个地址使用时均不需要携带 `/v1` 后缀，即 `base_url="https://llm.cufo.cc/openai"` 或者 `chat_url="https://llm.cufo.cc/openai/chat/completions"`。
 
 ## 示例 1： OpenAI
 
