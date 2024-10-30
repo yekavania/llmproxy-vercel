@@ -111,5 +111,4 @@ This project is [MIT](LICENSE) licensed.
 ## Contacts
 
 - [![Twitter Follow](https://img.shields.io/twitter/follow/ultrasev?style=social)](https://twitter.com/slippertopia)
-- [![GitHub Follow](https://img.shields.io/github/followers/ultrasev?style=social)](https://github.com/ultrasev)
 - [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCt0Op8mQvqwjp18B8vNPjzg?style=social)](https://www.youtube.com/channel/UCt0Op8mQvqwjp18B8vNPjzg)
